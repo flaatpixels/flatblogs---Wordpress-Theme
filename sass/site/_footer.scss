@@ -1,0 +1,25 @@
+.site-footer {
+  width: 100%;
+
+  margin-top: 100px;
+  padding: 85px 0;
+  background-color: #333333;
+}
+
+.site-footer__about{
+  width: 33%;
+  margin: 0 auto;
+
+  text-align: center;
+  font-size: 16px;
+
+  
+  ._header {
+    color: white;
+  }
+
+  ._about {
+    font-weight: 300;
+    color: white;
+  }
+}

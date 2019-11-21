@@ -1062,4 +1062,27 @@ object {
 	margin: 0 auto;
 }
 
+.site-footer {
+	width: 100%;
+	margin-top: 100px;
+	padding: 85px 0;
+	background-color: #333333;
+}
+
+.site-footer__about {
+	width: 33%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+}
+
+.site-footer__about ._header {
+	color: white;
+}
+
+.site-footer__about ._about {
+	font-weight: 300;
+	color: white;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
