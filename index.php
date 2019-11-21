@@ -42,14 +42,24 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
-
+			//the_posts_navigation();
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
 		?>
+
+
+			<div class="blog-post-pagination">
+				<?php the_posts_pagination(
+					array(
+					    'mid_size' => 2,
+					    'prev_text' => __( '<', 'textdomain' ),
+					    'next_text' => __( '>', 'textdomain' ),
+					)
+				); ?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
