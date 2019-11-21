@@ -25,34 +25,69 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'flatblogs' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$flatblogs_description = get_bloginfo( 'description', 'display' );
-			if ( $flatblogs_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $flatblogs_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flatblogs' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+		<div class="site-header_top">
+
+			<div class="site-main">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+				<nav id="site-navigation" class="main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flatblogs' ); ?></button>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+					?>
+				</nav>
+			</div>
+
+		</div>
+
+		<div class="site-banner site-main">
+			<div class="site-branding">
+					<?php
+				$flatblogs_description = get_bloginfo( 'description', 'display' );
+				if ( $flatblogs_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $flatblogs_description; /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
+
+			<div class="categories">
+				
+
+				<?php
+					$current_category = get_category( get_query_var( 'cat' ) );
+
+					$categories = get_categories( array(
+					    'orderby' => 'name',
+					    'order'   => 'ASC'
+					) );
+
+					//Show a category for all posts -->
+					$defaultCategory = sprintf(
+						'<a href="%1s" rel="home" class="category %2s">Tout</a>',
+						esc_url( home_url( '/' ) ),
+						!$current_category->cat_ID ? 'current_tag' : ''
+					);
+					echo $defaultCategory;
+
+					foreach( $categories as $category ) {
+					    $category_link = sprintf( 
+					        '<a href="%1$s" alt="%2$s" class="category %4$s">%3$s</a>',
+					        esc_url( get_category_link( $category->term_id ) ),
+					        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+					        esc_html( $category->name ),
+					        $current_category && $current_category->cat_ID == $category->cat_ID ? 'current_tag' : ''
+					    );
+
+					    echo $category_link;
+					} 
+				 ?>
+			</div>
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

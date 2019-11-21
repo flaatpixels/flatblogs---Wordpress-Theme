@@ -1,5 +1,12 @@
 .site-main {
+  position: relative;
   max-width: 1220px;
   padding: 0 25px;
   margin: 0 auto;
+
+  &.moveTop {
+    margin-top: -95px;
+    z-index: 3;
+
+  }
 }
