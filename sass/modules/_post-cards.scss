@@ -1,0 +1,48 @@
+.post-card {
+  width: 100%;
+
+  padding: 35px 70px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 47.5px 2.5px rgba(0, 0, 0, 0.1);
+}
+
+.entry-title,
+.entry-title a {
+  max-width: 735px;
+  margin : 0 0 30px 0;
+
+  font-size: 25px;
+  font-family: "Roboto";
+  color: $color__primary;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: all .2s;
+
+  &:hover { color: rgb(132, 121, 197); }
+}
+
+.entry-content__card p { margin : 0; }
+
+.entry-footer-plus {
+  display: block;
+
+  margin-top: 25px;
+  width: 150px;
+  height: 55px;
+
+  background-color: $color__primary__fade;
+  color : white;
+
+  text-align: center;
+  line-height: 55px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+
+  transition: all .2s;
+
+  &:hover { background-color: $color__primary; }
+
+}
