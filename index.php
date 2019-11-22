@@ -48,18 +48,11 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+
+			get_template_part( 'template-parts/content', 'pagination' );
+
 		?>
 
-
-			<div class="blog-post-pagination">
-				<?php the_posts_pagination(
-					array(
-					    'mid_size' => 2,
-					    'prev_text' => __( '<', 'textdomain' ),
-					    'next_text' => __( '>', 'textdomain' ),
-					)
-				); ?>
-			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
