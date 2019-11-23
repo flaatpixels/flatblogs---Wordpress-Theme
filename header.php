@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'flatblogs' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header <?= is_home() && is_front_page() || is_archive() ? 'is-home' : '' ?>">
 
 		<div class="site-header_top">
 
@@ -43,7 +43,8 @@
 			</div>
 
 		</div>
-
+		
+		<?php if(is_home() && is_front_page() || is_archive()) : ?>
 		<div class="site-banner site-main">
 			<div class="site-branding">
 					<?php
@@ -87,6 +88,7 @@
 				 ?>
 			</div>
 		</div>
+	<?php endif; ?>
 
 	</header><!-- #masthead -->
 

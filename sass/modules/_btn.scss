@@ -1,0 +1,21 @@
+.btn-primary {
+  display: block;
+
+  margin-top: 25px;
+  width: 150px;
+  height: 55px;
+
+  background-color: $color__primary__fade;
+  color : white;
+
+  text-align: center;
+  line-height: 55px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+
+  transition: all .2s;
+
+  &:hover { background-color: $color__primary; }
+
+}

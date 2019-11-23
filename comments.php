@@ -23,10 +23,39 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php
+
+	function flatblogs_comments_callback( $comment, $args, $depth ) {
+	    $GLOBALS['comment'] = $comment;
+	 
+	    ?>
+	    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+	        <article id="comment-<?php comment_ID(); ?>">
+	 					<div class="comment-data">	
+	 						<div class="comment-avatar">
+	 							<?= get_avatar($comment->comment_author_email); ?>
+	 						</div>
+	            <div class="comment-content">
+	            	<div class="comment-metadata">
+	            		<span class="__name"><?= $comment->comment_author; ?></span><span><?= $comment->comment_date; ?></span>
+	            	</div>
+	            	<div><?php comment_text(); ?></div>
+	            </div>
+	          </div>
+	
+            <div class="reply">
+                <?= preg_replace( '/comment-reply-link/', 'comment-reply-link ' . 'btn-primary', get_comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) )); ?>
+            </div>
+	        </article>
+	    </li>
+	    <?php
+	}
+	 
+	//comment_form();
+
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<!--<h2 class="comments-title">
 			<?php
 			$flatblogs_comment_count = get_comments_number();
 			if ( '1' === $flatblogs_comment_count ) {
@@ -44,15 +73,14 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>--><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
+				'callback' => 'flatblogs_comments_callback'
 			) );
 			?>
 		</ol><!-- .comment-list -->
@@ -69,7 +97,6 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
 	?>
 
 </div><!-- #comments -->

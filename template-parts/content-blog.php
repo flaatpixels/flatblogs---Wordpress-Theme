@@ -23,7 +23,7 @@
   </div><!-- .entry-content -->
   
   <footer class="entry-footer">
-    <a href="<?= esc_url( get_permalink() ) ?>" rel="bookmark" class="entry-footer-plus">Lire</a>
+    <a href="<?= esc_url( get_permalink() ) ?>" rel="bookmark" class="btn-primary">Lire</a>
   </footer>
 
   <!--<footer class="entry-footer">
