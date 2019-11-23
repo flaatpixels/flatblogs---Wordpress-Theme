@@ -16,11 +16,11 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-container">
 			<section class="site-footer__about">
-				<h3 class="_header">Qui je suis ?</h3>
+				<h3 class="_header">
+					<?php echo get_theme_mod('footer_about_title_setting', 'Add a title'); ?>
+				</h3>
 				<p class="_about">
-					Je suis Développeur Web, pasionné des nouvelles technologies, 
-					amant du Digital Marketing, 
-					et surtout j’aime partager ce que j’apprends.
+					<?php echo get_theme_mod('footer_about_desc_setting', 'Add a description'); ?>
 				</p>
 				<div class="_social">
 					

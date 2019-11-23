@@ -20,11 +20,11 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php //body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'flatblogs' ); ?></a>
 
-	<header id="masthead" class="site-header <?= is_home() && is_front_page() || is_archive() ? 'is-home' : '' ?>">
+	<header id="masthead" class="site-header <?= is_home() && is_front_page() || is_archive() ? 'is-home' : '' ?>" style="background-image:url('<?= get_theme_mod("banner_image_load")?>')">
 
 		<div class="site-header_top">
 

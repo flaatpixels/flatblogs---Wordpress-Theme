@@ -1219,7 +1219,6 @@ object {
 }
 
 .site-header.is-home {
-	background-image: url("img/header.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;

@@ -39,4 +39,16 @@
 			}
 		} );
 	} );
+
+	wp.customize("footer_about_title_setting", function(value) {
+		value.bind(function(newval) {
+			$(".site-footer__about ._header").html(newval);
+		} );
+	});
+
+	wp.customize("footer_about_title_setting", function(value) {
+		value.bind(function(newval) {
+			$(".site-footer__about ._about").html(newval);
+		} );
+	});
 } )( jQuery );

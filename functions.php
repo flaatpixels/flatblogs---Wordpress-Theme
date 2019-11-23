@@ -133,6 +133,7 @@ function flatblogs_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'flatblogs_scripts' );
 
 function wpb_move_comment_field_to_bottom( $fields ) {
