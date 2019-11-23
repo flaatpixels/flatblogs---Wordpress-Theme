@@ -104,13 +104,23 @@ add_action( 'after_setup_theme', 'flatblogs_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function flatblogs_widgets_init() {
-	register_sidebar( array(
+	/*register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'flatblogs' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'flatblogs' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );*/
+
+	register_sidebar( array(
+		'name'          => 'Add widgets in the footer',
+		'id'            => esc_html__( 'social-links', 'flatblogs' ),
+		'description'   => esc_html__( 'Add your widgets here.', 'flatblogs' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }

@@ -23,14 +23,18 @@
 					<?php echo get_theme_mod('footer_about_desc_setting', 'Add a description'); ?>
 				</p>
 				<div class="_social">
-					
+					<?php if ( is_active_sidebar( 'social-links' ) ) : ?>
+						<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+							<?php dynamic_sidebar( 'social-links' ); ?>
+						</div><!-- #primary-sidebar -->
+					<?php endif; ?>
 				</div>
 			</section>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<!-- <?php wp_footer(); ?> -->
+<?php wp_footer(); ?>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 .site-footer {
   width: 100%;
+  color: white;
 
   margin-top: 100px;
   padding: 85px 0;
@@ -19,7 +20,13 @@
   }
 
   ._about {
-    font-weight: 300;
     color: white;
+    font-weight: 300;
   }
+}
+
+.footer-widget-title {
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
 }
