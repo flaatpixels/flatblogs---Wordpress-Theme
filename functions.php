@@ -135,6 +135,27 @@ function flatblogs_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'flatblogs_scripts' );
 
+function wpb_move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+} 
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom');
+
+function flatblogs_remove_comment_fields($arg) {
+	if(isset($arg['url'])){
+		unset($arg['url']);
+	}
+
+	if(isset($arg['cookies'])){
+		unset($arg['cookies']);
+	}
+
+  return $arg;
+}
+add_filter('comment_form_default_fields', 'flatblogs_remove_comment_fields');
+
 /**
  * Implement the Custom Header feature.
  */

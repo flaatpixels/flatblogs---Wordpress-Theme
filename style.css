@@ -888,7 +888,7 @@ a {
 .article-single {
 	position: relative;
 	width: 100%;
-	max-width: 700px;
+	max-width: 800px;
 	margin-top: 85px;
 }
 
@@ -924,6 +924,10 @@ a {
 	color: #333333;
 }
 
+.comment-form .comment-notes {
+	display: none;
+}
+
 .comment-form p {
 	margin: 0;
 }
@@ -931,18 +935,20 @@ a {
 .comment-form label {
 	display: block;
 	margin: 15px 0;
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
 }
 
 .comment-form input {
 	width: 100%;
-	height: 40px;
+	height: 50px;
 }
 
 .comment-form input,
 .comment-form textarea {
 	padding: 0 10px;
 	border: 1px solid #d6d6d6;
-	background-color: #f5f5f5;
 	outline: none;
 }
 
@@ -950,32 +956,10 @@ a {
 	padding-top: 5px;
 }
 
-.comment-form .comment-form-cookies-consent {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-align: center;
-	    align-items: center;
-}
-
-.comment-form .comment-form-cookies-consent input {
-	width: 20px;
-}
-
-.comment-form .comment-form-cookies-consent label {
-	font-size: 13px;
-	padding-left: 10px;
-	font-weight: bold;
-	color: #604291;
-	font-style: italic;
-}
-
-.comment-form .form-submit {
-	padding-top: 35px;
-}
-
 .comment-list {
 	margin: 0;
 	padding: 0;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 .comment-list, .comment-list ul {
@@ -984,7 +968,7 @@ a {
 
 .comment-list .comment {
 	padding: 30px 0;
-	border-bottom: 1px solid #e3e3e3;
+	border-top: 1px solid #e3e3e3;
 }
 
 .comment-list .comment p {
@@ -1030,10 +1014,14 @@ a {
 	color: #8479c5;
 }
 
-.btn-primary {
-	display: block;
+.btn-primary,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	display: inline-block;
+	padding: 0 55px;
 	margin-top: 25px;
-	width: 150px;
 	height: 55px;
 	background-color: #8479c5;
 	color: white;
@@ -1043,9 +1031,14 @@ a {
 	text-decoration: none;
 	font-size: 18px;
 	transition: all .2s;
+	cursor: pointer;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
 	background-color: #604291;
 }
 

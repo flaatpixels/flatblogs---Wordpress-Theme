@@ -1,8 +1,11 @@
-.btn-primary {
-  display: block;
-
+.btn-primary,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  padding: 0 55px;
   margin-top: 25px;
-  width: 150px;
   height: 55px;
 
   background-color: $color__primary__fade;
@@ -15,7 +18,7 @@
   font-size: 18px;
 
   transition: all .2s;
-
+  cursor: pointer;
   &:hover { background-color: $color__primary; }
 
 }

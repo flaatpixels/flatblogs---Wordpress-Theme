@@ -43,15 +43,13 @@ if ( post_password_required() ) {
 	          </div>
 	
             <div class="reply">
-                <?= preg_replace( '/comment-reply-link/', 'comment-reply-link ' . 'btn-primary', get_comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) )); ?>
+                <?= preg_replace( '/comment-reply-link/', 'comment-reply-link ' . 'btn-primary', get_comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Répondre <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) )); ?>
             </div>
 	        </article>
 	    </li>
 	    <?php
 	}
 	 
-	//comment_form();
-
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
@@ -96,6 +94,8 @@ if ( post_password_required() ) {
 		endif;
 
 	endif; // Check for have_comments().
+
+	comment_form();
 
 	?>
 
