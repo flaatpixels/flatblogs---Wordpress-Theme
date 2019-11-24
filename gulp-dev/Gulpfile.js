@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 	postcss = require('gulp-postcss'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
+	zip = require('gulp-zip');
 
 	// Only work with new or updated files
 	newer = require('gulp-newer'),
@@ -52,6 +53,16 @@ gulp.task('javascript', function() {
 });
 
 
+gulp.task('build', function() {
+	return gulp.src([
+		'**/*',
+		'!**/gulp-dev/**/*',
+		'!**/sass/**/*',
+	], { cwd:'..'})
+	.pipe(zip('archive.zip'))
+	.pipe(gulp.dest('../dist'));
+});
+
 // Watch everything
 gulp.task('watch', function() {
 	/*browserSync.init({ 
@@ -64,6 +75,8 @@ gulp.task('watch', function() {
 	gulp.watch(img + 'RAW/**/*.{jpg,JPG,png}', ['images']);
 	//gulp.watch(root + '**/*').on('change', browserSync.reload);
 });
+
+
 
 
 // Default task (runs at initiation: gulp --verbose)
