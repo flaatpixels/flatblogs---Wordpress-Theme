@@ -672,7 +672,6 @@ a {
 .main-navigation li {
 	margin-left: 20px;
 	text-transform: uppercase;
-	float: left;
 	position: relative;
 }
 
@@ -699,7 +698,8 @@ a {
 		display: none;
 	}
 	.main-navigation ul {
-		display: block;
+		display: -ms-flexbox;
+		display: flex;
 	}
 }
 
@@ -723,6 +723,61 @@ a {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+.menu-toggle {
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.menu-toggle:hover {
+	background-color: transparent;
+}
+
+.menu-toggle svg {
+	width: 100%;
+	height: 100%;
+	fill: #604291;
+}
+
+@media screen and (max-width: 800px) {
+	.main-navigation.toggled .menu-all-pages-container {
+		display: block;
+	}
+	.menu-all-pages-container {
+		display: none;
+		position: absolute;
+		top: 100px;
+		left: 50%;
+		width: 90%;
+		background-color: white;
+		border-radius: 5px;
+		transform: translateX(-50%);
+		transition: all .2s;
+		box-shadow: 0px 0 15px 14px rgba(0, 0, 0, 0.09);
+	}
+	.menu-all-pages-container .nav-menu .menu-item {
+		position: relative;
+		display: block;
+		padding: 25px;
+		border-bottom: 1px solid #e6e6e6;
+	}
+	.menu-all-pages-container .nav-menu .menu-item:last-child {
+		border-bottom: none;
+	}
+	.menu-all-pages-container .nav-menu .menu-item a {
+		color: #604291;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.main-navigation li {
+		margin: 0;
+	}
 }
 
 .blog-post-pagination {
@@ -897,7 +952,7 @@ a {
 }
 
 .article-single .entry-content {
-	margin: 0;
+	margin: 0 0 35px 0;
 }
 
 .article-single .entry-content p,
@@ -1201,14 +1256,16 @@ object {
 	display: block;
 }
 
-.site-main {
+.site-main,
+.site-container {
 	position: relative;
 	max-width: 1220px;
 	padding: 0 25px;
 	margin: 0 auto;
 }
 
-.site-main.moveTop {
+.site-main.moveTop,
+.site-container.moveTop {
 	margin-top: -95px;
 	z-index: 3;
 }
@@ -1236,7 +1293,7 @@ object {
 
 .site-header_top {
 	position: relative;
-	z-index: 2;
+	z-index: 4;
 	background-color: white;
 	border-bottom: 1px solid #e3e3e3;
 }
@@ -1325,7 +1382,8 @@ object {
 }
 
 .site-footer__about {
-	width: 33%;
+	width: 100%;
+	max-width: 400px;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 16px;

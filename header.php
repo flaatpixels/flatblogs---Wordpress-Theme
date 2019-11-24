@@ -32,7 +32,10 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'flatblogs' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<svg>
+					     <use xlink:href="<?php echo esc_url( get_template_directory_uri() . '/img/menu.svg#menu' ); ?>"></use>
+					</button>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
