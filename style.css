@@ -627,103 +627,6 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	margin-left: 20px;
-	text-transform: uppercase;
-	position: relative;
-}
-
-.main-navigation a {
-	font-style: normal;
-	font-size: 18px;
-	color: #8479c5;
-	display: block;
-	text-decoration: none;
-}
-
-.site-header.is-home .main-navigation a {
-	color: white;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: -ms-flexbox;
-		display: flex;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
 .menu-toggle {
 	width: 40px;
 	height: 40px;
@@ -734,48 +637,68 @@ a {
 	background-color: transparent;
 }
 
-.menu-toggle:hover {
-	background-color: transparent;
-}
-
 .menu-toggle svg {
 	width: 100%;
 	height: 100%;
 	fill: #604291;
 }
 
-@media screen and (max-width: 800px) {
-	.main-navigation.toggled .menu-all-pages-container {
-		display: block;
-	}
-	.menu-all-pages-container {
+.nav-menu {
+	position: fixed;
+	top: 100px;
+	left: 100%;
+	width: 100%;
+	height: calc(100% - 100px);
+	margin: 0;
+	padding: 30px;
+	background-color: white;
+	list-style: none;
+	transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.menu-item {
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.menu-item a {
+	color: #604291;
+	font-weight: bold;
+	font-size: 1.375em;
+	font-style: normal;
+	text-decoration: none;
+}
+
+.main-navigation.toggled .nav-menu {
+	left: 0;
+}
+
+@media screen and (min-width: 800px) {
+	.menu-toggle {
 		display: none;
-		position: absolute;
-		top: 100px;
-		left: 50%;
-		width: 90%;
-		background-color: white;
-		border-radius: 5px;
-		transform: translateX(-50%);
-		transition: all .2s;
-		box-shadow: 0px 0 15px 14px rgba(0, 0, 0, 0.09);
 	}
-	.menu-all-pages-container .nav-menu .menu-item {
+	.main-navigation {
+		width: 100%;
+	}
+	.nav-menu {
 		position: relative;
-		display: block;
-		padding: 25px;
-		border-bottom: 1px solid #e6e6e6;
+		top: 0;
+		left: 0;
+		padding: 0;
+		background-color: transparent;
+		text-align: right;
 	}
-	.menu-all-pages-container .nav-menu .menu-item:last-child {
-		border-bottom: none;
+	.nav-menu .menu-item {
+		display: inline-block;
+		width: auto;
+		padding: 0 0 0 25px;
+		border: none;
 	}
-	.menu-all-pages-container .nav-menu .menu-item a {
-		color: #604291;
-		font-size: 18px;
-		font-weight: bold;
-	}
-	.main-navigation li {
-		margin: 0;
+	.nav-menu .menu-item a {
+		color: white;
+		font-size: 1.125em;
+		text-transform: uppercase;
 	}
 }
 
@@ -1117,11 +1040,7 @@ a {
 	color: #8479c5;
 }
 
-.btn-primary,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+.btn-primary {
 	display: inline-block;
 	padding: 0 60px;
 	height: 55px;
@@ -1136,11 +1055,7 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-.btn-primary:hover,
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+.btn-primary:hover {
 	background-color: #604291;
 }
 
@@ -1353,6 +1268,17 @@ object {
 	-ms-flex-pack: justify;
 	    justify-content: space-between;
 	height: 100px;
+}
+
+.site-logo-container {
+	display: block;
+	width: 35px;
+	height: 35px;
+}
+
+.site-logo-container.__default {
+	background-color: white;
+	opacity: .5;
 }
 
 .site-header.is-home .site-header_top {

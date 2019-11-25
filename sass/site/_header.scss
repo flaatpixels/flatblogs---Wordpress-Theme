@@ -27,12 +27,25 @@
   z-index: 4;
   background-color: white;
   border-bottom: 1px solid #e3e3e3;
+
   .site-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     height: 100px;
+  }
+}
+
+.site-logo-container {
+  display: block;
+
+  width: 35px;
+  height: 35px;
+
+  &.__default {
+    background-color: white;
+    opacity: .5;
   }
 }
 

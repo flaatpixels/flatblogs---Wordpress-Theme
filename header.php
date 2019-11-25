@@ -29,7 +29,8 @@
 		<div class="site-header_top">
 
 			<div class="site-main">
-				<!--<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>-->
+				<a class="site-logo-container __default" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				</a>
 
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
