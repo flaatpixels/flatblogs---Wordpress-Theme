@@ -7,17 +7,36 @@
   box-shadow: 0px 0px 47.5px 2.5px rgba(0, 0, 0, 0.1);
 }
 
+.postHeader--thumbnail {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .thumbnail-container {
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .postContent--thumbnail {
+    width: 100%;
+    padding-top: 25px;
+  }
+}
+
 .entry-title,
 .entry-title a {
   max-width: 735px;
-  margin : 0 0 30px 0;
+  margin : 0 0 25px 0;
 
   font-size: 25px;
   font-family: "Roboto";
   color: $color__primary;
   font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
 
   transition: all .2s;
 }
@@ -28,4 +47,20 @@
 
 @media screen and (min-width: 800px) {
   .post-card { padding: 35px 70px; }
+
+  .postHeader--thumbnail {
+    flex-direction: row; 
+
+    .thumbnail-container {
+      width: 330px;
+      height: 330px;
+
+      img { width: 100%; }
+    }
+  }
+
+  .postHeader--thumbnail .postContent--thumbnail {
+    width: calc(100% - 330px);
+    padding: 0 0 0 25px;
+  }
 }

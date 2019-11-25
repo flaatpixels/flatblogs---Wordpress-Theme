@@ -10,21 +10,30 @@
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?>>
-
-  <header class="entry-header">
-    <?php
-      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    ?>
-  </header>
-
-  <div class="entry-content entry-content__card">
-    <?php the_excerpt(); ?>
-  </div><!-- .entry-content -->
+<article id="post-<?php the_ID(); ?>" class="post-card <?= has_post_thumbnail() ? 'postHeader--thumbnail' : '' ?>" >
   
-  <footer class="entry-footer">
-    <a href="<?= esc_url( get_permalink() ) ?>" rel="bookmark" class="btn-primary">Lire</a>
-  </footer>
+
+  <?php if(has_post_thumbnail()) : ?>
+    <div class="thumbnail-container">
+      <?= the_post_thumbnail(); ?>
+    </div>
+  <?php endif; ?>
+
+  <div class="<?= has_post_thumbnail() ? 'postContent--thumbnail' : '' ?>">
+    <header class="entry-header">
+      <?php
+        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+      ?>
+    </header>
+
+    <div class="entry-content entry-content__card">
+      <?php the_excerpt(); ?>
+    </div><!-- .entry-content -->
+
+    <footer class="entry-footer">
+      <a href="<?= esc_url( get_permalink() ) ?>" rel="bookmark" class="btn-primary">Lire</a>
+    </footer>
+  </div>
 
   <!--<footer class="entry-footer">
     <?php flatblogs_entry_footer(); ?>
