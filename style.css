@@ -921,10 +921,10 @@ a {
 .postHeader--thumbnail {
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-align: start;
-	    align-items: flex-start;
 	-ms-flex-direction: column;
 	    flex-direction: column;
+	-ms-flex-align: start;
+	    align-items: flex-start;
 }
 
 .postHeader--thumbnail .thumbnail-container {
@@ -945,7 +945,7 @@ a {
 .entry-title a {
 	max-width: 735px;
 	margin: 0 0 25px 0;
-	font-size: 25px;
+	font-size: 1.375em;
 	font-family: "Roboto";
 	color: #604291;
 	font-weight: bold;
@@ -961,6 +961,10 @@ a {
 	margin: 0;
 }
 
+.entry-footer {
+	margin-top: 35px;
+}
+
 @media screen and (min-width: 800px) {
 	.post-card {
 		padding: 35px 70px;
@@ -968,6 +972,8 @@ a {
 	.postHeader--thumbnail {
 		-ms-flex-direction: row;
 		    flex-direction: row;
+		-ms-flex-align: center;
+		    align-items: center;
 	}
 	.postHeader--thumbnail .thumbnail-container {
 		width: 330px;
@@ -1117,8 +1123,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
-	padding: 0 55px;
-	margin-top: 25px;
+	padding: 0 60px;
 	height: 55px;
 	background-color: #8479c5;
 	color: white;
@@ -1126,7 +1131,7 @@ input[type="submit"] {
 	line-height: 55px;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 1.125em;
 	transition: all .2s;
 	cursor: pointer;
 }
