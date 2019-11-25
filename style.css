@@ -400,7 +400,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	margin-bottom: 1.5em;
-	color: #333333;
 }
 
 dfn, cite, em, i {
@@ -914,7 +913,7 @@ a {
 .post-card {
 	width: 100%;
 	margin-bottom: 40px;
-	padding: 35px 70px;
+	padding: 35px;
 	background-color: white;
 	box-shadow: 0px 0px 47.5px 2.5px rgba(0, 0, 0, 0.1);
 }
@@ -938,6 +937,12 @@ a {
 
 .entry-content__card p {
 	margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+	.post-card {
+		padding: 35px 70px;
+	}
 }
 
 .article-single {
@@ -1313,17 +1318,6 @@ object {
 	border-bottom: none;
 }
 
-.site-title {
-	margin: 0;
-}
-
-.site-title a {
-	font-style: normal;
-	font-size: 25px;
-	text-decoration: none;
-	color: #8479c5;
-}
-
 .site-header.is-home .site-title a {
 	color: white;
 }
@@ -1336,11 +1330,23 @@ object {
 	text-align: center;
 }
 
+.site-branding {
+	color: white;
+}
+
+.site-title {
+	margin: 0 0 20px 0;
+	color: #f3f3f3;
+	line-height: initial;
+	font-style: normal;
+	font-size: 4.375em;
+	text-decoration: none;
+}
+
 .site-description {
 	max-width: 750px;
 	margin: 0 auto;
-	color: white;
-	font-size: 30px;
+	font-size: 1.875em;
 	font-weight: 300;
 }
 

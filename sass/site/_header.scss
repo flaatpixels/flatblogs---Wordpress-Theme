@@ -41,16 +41,6 @@
   border-bottom: none;
 }
 
-.site-title {
-  margin: 0;
-  a {
-    font-style: normal;
-    font-size: 25px;
-    text-decoration: none;
-    color: $color__primary__fade;
-  }
-}
-
 .site-header.is-home .site-title a { color: white; }
 
 .site-banner {
@@ -62,12 +52,26 @@
   text-align: center;
 }
 
+.site-branding {
+  color: white;
+}
+
+.site-title {
+  margin: 0 0 20px 0;
+
+  color: #f3f3f3;
+  
+  line-height: initial;
+  font-style: normal;
+  font-size: convertPxToEm(70px);
+  text-decoration: none;
+}
+
 .site-description {
   max-width: 750px;
   margin: 0 auto;
 
-  color: white;
-  font-size: 30px;
+  font-size: convertPxToEm(30px);
   font-weight: 300;
 }
 

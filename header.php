@@ -24,12 +24,12 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'flatblogs' ); ?></a>
 
-	<header id="masthead" class="site-header <?= is_home() && is_front_page() || is_archive() ? 'is-home' : '' ?>" style="background-image:url('<?= get_theme_mod("banner_image_load")?>')">
+	<header id="masthead" class="site-header <?= is_home() && is_front_page() || is_archive() ? 'is-home' : '' ?>" style="background-image:url('<?= get_theme_mod("banner_image_load", get_template_directory_uri() . '/img/header.jpg'); ?>')">
 
 		<div class="site-header_top">
 
 			<div class="site-main">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<!--<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>-->
 
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -50,10 +50,11 @@
 		<?php if(is_home() && is_front_page() || is_archive()) : ?>
 		<div class="site-banner site-main">
 			<div class="site-branding">
-					<?php
-				$flatblogs_description = get_bloginfo( 'description', 'display' );
-				if ( $flatblogs_description || is_customize_preview() ) :
-					?>
+				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+				<?php
+					$flatblogs_description = get_bloginfo( 'description', 'display' );
+					if ( $flatblogs_description || is_customize_preview() ) :
+				?>
 					<p class="site-description"><?php echo $flatblogs_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->

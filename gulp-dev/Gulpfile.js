@@ -53,13 +53,13 @@ gulp.task('javascript', function() {
 });
 
 
-gulp.task('build', function() {
+gulp.task('build', ['css', 'javascript', 'images'], function() {
 	return gulp.src([
 		'**/*',
 		'!**/gulp-dev/**/*',
 		'!**/sass/**/*',
 	], { cwd:'..'})
-	.pipe(zip('archive.zip'))
+	.pipe(zip('flatblogs.zip'))
 	.pipe(gulp.dest('../dist'));
 });
 
