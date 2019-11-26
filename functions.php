@@ -115,8 +115,28 @@ function flatblogs_widgets_init() {
 	) );*/
 
 	register_sidebar( array(
-		'name'          => 'Add widgets in the footer',
-		'id'            => esc_html__( 'social-links', 'flatblogs' ),
+		'name'          => 'Add widgets in the footer (section - 1)',
+		'id'            => esc_html__( 'footer-widget-1', 'flatblogs' ),
+		'description'   => esc_html__( 'Add your widgets here.', 'flatblogs' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Add widgets in the footer (section - 2)',
+		'id'            => esc_html__( 'footer-widget-2', 'flatblogs' ),
+		'description'   => esc_html__( 'Add your widgets here.', 'flatblogs' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Add widgets in the footer (section - 3)',
+		'id'            => esc_html__( 'footer-widget-3', 'flatblogs' ),
 		'description'   => esc_html__( 'Add your widgets here.', 'flatblogs' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

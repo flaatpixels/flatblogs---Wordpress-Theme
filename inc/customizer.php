@@ -62,8 +62,19 @@ function flatblogs_customize_register( $wp_customize ) {
 	 * To add a description in the footer
 	 * Of the blog
 	 */
+
+	$wp_customize->add_panel( 'footer_section', array(
+	  'title' => __( 'Custom footer' ),
+	  'description' => 'Customize the footer sections',
+	  'priority' => 160,
+	) );
+
+	//Section 1
+	//Customizer
+
 	$wp_customize->add_section("footer_about", array(
-		"title" => __("About this blog (in footer)", "customizer_footer_about_sections"),
+		"title" => __("Custom section 1", "customizer_footer_about_sections"),
+		'panel' => 'footer_section',
 		"priority" => 30,
 	));
 
@@ -98,6 +109,88 @@ function flatblogs_customize_register( $wp_customize ) {
 			"type" => "textarea"
 		)
 	));
+
+
+	//Section 2
+	//Customizer
+	$wp_customize->add_section("footer_about2", array(
+		"title" => __("Custom section 2", "customizer_footer_about_sections"),
+		'panel' => 'footer_section',
+		"priority" => 30,
+	));
+
+	$wp_customize->add_setting("footer_about2_title_setting", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"footer_about2_title",
+		array(
+			"label" => __("Enter the section title", "customizer_footer_about_label"),
+			"section" => "footer_about2",
+			"settings" => "footer_about2_title_setting",
+			"type" => "input"
+		)
+	));
+
+	$wp_customize->add_setting("footer_about2_desc_setting", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"footer_about2_about",
+		array(
+			"label" => __('Enter the section title', "customizer_footer_about_label"),
+			"section" => "footer_about2",
+			"settings" => "footer_about2_desc_setting",
+			"type" => "textarea"
+		)
+	));
+
+	//Section 3
+	//Customizer
+	$wp_customize->add_section("footer_about3", array(
+		"title" => __("Custom section 3", "customizer_footer_about_sections"),
+		'panel' => 'footer_section',
+		"priority" => 30,
+	));
+
+	$wp_customize->add_setting("footer_about3_title_setting", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"footer_about3_title",
+		array(
+			"label" => __("Enter the section title", "customizer_footer_about_label"),
+			"section" => "footer_about3",
+			"settings" => "footer_about3_title_setting",
+			"type" => "input"
+		)
+	));
+
+	$wp_customize->add_setting("footer_about3_desc_setting", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"footer_about3_about",
+		array(
+			"label" => __('Enter the section title', "customizer_footer_about_label"),
+			"section" => "footer_about3",
+			"settings" => "footer_about3_desc_setting",
+			"type" => "textarea"
+		)
+	));
+
 }
 add_action( 'customize_register', 'flatblogs_customize_register' );
 
