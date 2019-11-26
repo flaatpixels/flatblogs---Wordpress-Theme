@@ -42,6 +42,14 @@ if ( ! function_exists( 'flatblogs_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/*
+		* Customizing post thumnail to square
+		*/
+		add_image_size( 'thumb-square-image-size', 300, 300, true );
+
+		add_image_size( 'large-fit-image-size', 500, 350, true );
+
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'flatblogs' ),

@@ -518,38 +518,6 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -696,9 +664,12 @@ a {
 		border: none;
 	}
 	.nav-menu .menu-item a {
-		color: white;
+		color: #8479c5;
 		font-size: 1.125em;
 		text-transform: uppercase;
+	}
+	.is-home .nav-menu .menu-item a {
+		color: white;
 	}
 }
 
@@ -713,6 +684,39 @@ a {
 	    align-items: center;
 	-ms-flex-pack: center;
 	    justify-content: center;
+}
+
+.post-navigation .nav-links {
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+	margin: 0 -10px;
+}
+
+.post-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-next {
+	display: block;
+	background-color: #333333;
+	width: 100%;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.post-navigation .nav-links .nav-previous a,
+.post-navigation .nav-links .nav-next a {
+	display: block;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+	padding: 50px 25px;
+	transition: all .2s;
+}
+
+.post-navigation .nav-links .nav-previous a:hover,
+.post-navigation .nav-links .nav-next a:hover {
+	background-color: #604291;
 }
 
 .page-numbers {
@@ -733,6 +737,18 @@ a {
 .page-numbers.current {
 	background-color: #a7a7a7;
 	cursor: not-allowed;
+}
+
+@media screen and (min-width: 800px) {
+	.post-navigation .nav-links {
+		-ms-flex-direction: row;
+		    flex-direction: row;
+	}
+	.post-navigation .nav-links .nav-previous,
+	.post-navigation .nav-links .nav-next {
+		width: calc(50% - 20px);
+		margin: 30px 10px 50px 10px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -852,6 +868,7 @@ a {
 
 .postHeader--thumbnail .thumbnail-container {
 	width: 100%;
+	overflow: hidden;
 }
 
 .postHeader--thumbnail .thumbnail-container img {
@@ -919,35 +936,43 @@ a {
 }
 
 .article-single .entry-title {
-	font-size: 30px;
+	font-size: 1.875em;
 }
 
-.article-single .entry-content {
-	margin: 0 0 35px 0;
+.article-single .thumbnail-container {
+	width: 100%;
 }
 
-.article-single .entry-content p,
-.article-single .entry-content h1,
-.article-single .entry-content h2,
-.article-single .entry-content h3 {
-	margin-top: 0;
+.article-single .thumbnail-container img {
+	display: block;
+	width: 100%;
 }
 
-.article-single .entry-content h2,
-.article-single .entry-content h3 {
-	font-size: 25px;
+.article-single h2,
+.article-single h3 {
+	font-size: 1.5625em;
 	color: #8479c5;
 }
 
-.article-single .entry-content h3 {
-	font-size: 20px;
+.article-single h3 {
+	font-size: 1.25em;
 }
 
-.article-single .entry-content p {
-	line-height: 30px;
-	font-size: 18px;
-	font-weight: normal;
-	color: #333333;
+.article-single p, .article-single ul {
+	font-size: 1.25em;
+	font-weight: 300;
+	color: #797979;
+}
+
+.article-single .wp-block-image figcaption,
+.article-single .wp-caption figcaption {
+	text-align: center;
+	font-weight: 300;
+	font-family: 'Fjalla one', sans-serif;
+	font-size: 0.8125em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #676767;
 }
 
 .comment-form .comment-notes {
@@ -1040,12 +1065,21 @@ a {
 	color: #8479c5;
 }
 
-.btn-primary {
+.comment-form input[type="submit"] {
+	margin-top: 25px;
+	display: block;
+	width: 100%;
+}
+
+.btn-primary,
+.comment-form input[type="submit"] {
 	display: inline-block;
 	padding: 0 60px;
 	height: 55px;
 	background-color: #8479c5;
 	color: white;
+	border: none;
+	outline: none;
 	text-align: center;
 	line-height: 55px;
 	text-transform: uppercase;
@@ -1055,7 +1089,8 @@ a {
 	cursor: pointer;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.comment-form input[type="submit"]:hover {
 	background-color: #604291;
 }
 
@@ -1277,8 +1312,12 @@ object {
 }
 
 .site-logo-container.__default {
-	background-color: white;
+	background-color: #8479c5;
 	opacity: .5;
+}
+
+.is-home .site-logo-container.__default {
+	color: white;
 }
 
 .site-header.is-home .site-header_top {

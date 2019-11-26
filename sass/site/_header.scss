@@ -44,10 +44,12 @@
   height: 35px;
 
   &.__default {
-    background-color: white;
+    background-color: $color__primary__fade;
     opacity: .5;
   }
 }
+
+.is-home .site-logo-container.__default { color: white; }
 
 .site-header.is-home .site-header_top {
   background-color: transparent;

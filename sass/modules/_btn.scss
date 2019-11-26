@@ -1,10 +1,13 @@
-.btn-primary {
+.btn-primary,
+.comment-form input[type="submit"] {
   display: inline-block;
   padding: 0 60px;
   height: 55px;
 
   background-color: $color__primary__fade;
   color : white;
+  border: none;
+  outline: none;
 
   text-align: center;
   line-height: 55px;

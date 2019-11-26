@@ -15,7 +15,7 @@
 
   <?php if(has_post_thumbnail()) : ?>
     <div class="thumbnail-container">
-      <?= the_post_thumbnail(); ?>
+      <?= the_post_thumbnail('thumb-square-image-size'); ?>
     </div>
   <?php endif; ?>
 

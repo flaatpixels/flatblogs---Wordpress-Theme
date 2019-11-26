@@ -77,11 +77,13 @@
       border: none;
 
       a {
-        color: white;
+        color: $color__primary__fade;
         font-size: convertPxToEm(18px);
         text-transform: uppercase;
       }
     }
   }
+
+  .is-home .nav-menu .menu-item a { color: white; }
 
 }

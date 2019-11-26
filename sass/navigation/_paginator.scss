@@ -6,6 +6,36 @@
   justify-content: center;
 }
 
+.post-navigation {
+  .nav-links {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 -10px;
+
+    .nav-previous,
+    .nav-next {
+      display: block;
+      background-color: #333333;
+      width: 100%;
+      margin: 10px 0;
+      text-align: center;
+
+      a {
+        display: block;
+        font-size: convertPxToEm(16px);
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        padding: 50px 25px;
+
+        transition: all .2s;
+
+        &:hover { background-color: $color__primary; }
+      }
+    }
+  }
+}
+
 .page-numbers {
   display: block;
   margin: 0 15px;
@@ -26,5 +56,19 @@
   &.current {
     background-color: #a7a7a7;
     cursor: not-allowed;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .post-navigation {
+    .nav-links {
+      flex-direction: row;
+
+      .nav-previous,
+      .nav-next {
+        width: calc(50% - 20px);
+        margin: 30px 10px 50px 10px;
+      }
+    }
   }
 }

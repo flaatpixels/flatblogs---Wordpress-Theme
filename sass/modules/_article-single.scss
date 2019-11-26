@@ -5,30 +5,41 @@
 
   margin-top: 85px;
 
-  .entry-title { font-size: 30px; }
-
-  .entry-content {
-    margin: 0 0 35px 0;
-
-    p,
-    h1,
-    h2,
-    h3 { margin-top: 0; }
-
-    h2,
-    h3 {
-      font-size: 25px;
-      color: $color__primary__fade;
+  .entry-title {
+    font-size: convertPxToEm(30px);
+  }
+  
+  .thumbnail-container {
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
     }
+  }
 
-    h3 { font-size: 20px; }
+  h2,
+  h3 {
+    font-size: convertPxToEm(25px);
+    color: $color__primary__fade;
+  }
 
-    p {
-      line-height: 30px;
-      font-size: 18px; 
-      font-weight: normal;
+  h3 { font-size: convertPxToEm(20px); }
+  
+  p, ul {
+    font-size: convertPxToEm(20px);
+    font-weight: 300;
+    color: #797979;
+  }
 
-      color: $color__text-main;
-    }
+  .wp-block-image figcaption,
+  .wp-caption figcaption {
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Fjalla one', sans-serif;
+    font-size: convertPxToEm(13px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    color: #676767;
   }
 }

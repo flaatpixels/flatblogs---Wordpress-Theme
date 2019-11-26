@@ -22,8 +22,12 @@
         ?>
       </div>--><!-- .entry-meta -->
   </header><!-- .entry-header -->
-
-  <!--<?php flatblogs_post_thumbnail(); ?> -->
+  
+  <?php if(has_post_thumbnail()): ?>
+    <div class="thumbnail-container">
+      <?php the_post_thumbnail('large-fit-image-size'); ?>
+    </div>
+  <?php endif; ?>
 
   <div class="entry-content">
     <?php
