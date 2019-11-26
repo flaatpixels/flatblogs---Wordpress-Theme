@@ -1,0 +1,33 @@
+.not-found {
+  padding: 50px 0;
+  text-align: center;
+
+  .page-header .page-title {
+    margin: 0;
+
+    font-size: convertPxToEm(150px);
+    font-weight: bold;
+    line-height: initial;
+    letter-spacing: 70px;
+    margin-right: -70px;
+  }
+
+  .page-content {
+    font-weight: 300;
+    font-size: convertPxToEm(22px);
+
+    .search-field {
+      width: 100%;
+      max-width: 400px;
+      height: 50px;
+
+      outline: none;
+      padding: 0 10px;
+    }
+
+    .search-submit {
+      height: 50px;
+      //line-height: 40px;
+    }
+  }
+}

@@ -1401,4 +1401,35 @@ object {
 	}
 }
 
+.not-found {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.not-found .page-header .page-title {
+	margin: 0;
+	font-size: 9.375em;
+	font-weight: bold;
+	line-height: initial;
+	letter-spacing: 70px;
+	margin-right: -70px;
+}
+
+.not-found .page-content {
+	font-weight: 300;
+	font-size: 1.375em;
+}
+
+.not-found .page-content .search-field {
+	width: 100%;
+	max-width: 400px;
+	height: 50px;
+	outline: none;
+	padding: 0 10px;
+}
+
+.not-found .page-content .search-submit {
+	height: 50px;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
