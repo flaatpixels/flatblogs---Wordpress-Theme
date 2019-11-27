@@ -5,11 +5,11 @@
   .page-header .page-title {
     margin: 0;
 
-    font-size: convertPxToEm(150px);
+    font-size: convertPxToEm(90px);
     font-weight: bold;
     line-height: initial;
-    letter-spacing: 70px;
-    margin-right: -70px;
+    letter-spacing: 40px;
+    margin-right: -40px;
   }
 
   .page-content {
@@ -26,8 +26,22 @@
     }
 
     .search-submit {
+      display: block;
       height: 50px;
-      //line-height: 40px;
+
+      margin: 25px auto 0 auto;;
     }
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  .not-found {
+    .page-header .page-title { font-size: convertPxToEm(150px); }
+  }
+
+  .not-found .page-content .search-submit {
+    display: inline-block;
+    margin: 0;
   }
 }

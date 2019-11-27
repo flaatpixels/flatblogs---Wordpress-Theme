@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .post-navigation {
@@ -38,7 +39,7 @@
 
 .page-numbers {
   display: block;
-  margin: 0 15px;
+  margin: 10px;
 
   width: 30px;
   height: 30px;

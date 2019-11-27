@@ -6,7 +6,7 @@
   margin-top: 85px;
 
   .entry-title {
-    font-size: convertPxToEm(30px);
+    font-size: convertPxToEm(25px);
   }
   
   .thumbnail-container {
@@ -26,7 +26,7 @@
   h3 { font-size: convertPxToEm(20px); }
   
   p, ul {
-    font-size: convertPxToEm(20px);
+    font-size: convertPxToEm(18px);
     font-weight: 300;
     color: #797979;
   }
@@ -41,5 +41,17 @@
     letter-spacing: 2px;
 
     color: #676767;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .article-single {
+    .entry-title { font-size: convertPxToEm(30px); }
+    
+    p, ul {
+      font-size: convertPxToEm(20px);
+      font-weight: 300;
+      color: #797979;
+    }
   }
 }
