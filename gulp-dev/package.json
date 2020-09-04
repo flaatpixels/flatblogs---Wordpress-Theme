@@ -28,6 +28,6 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-zip": "^5.0.1",
     "jshint": "^2.9.4",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   }
 }
